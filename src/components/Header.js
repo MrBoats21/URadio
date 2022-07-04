@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
-import Links from './Links';
 import Loading from './Loading';
 
 export default class Header extends Component {
@@ -31,7 +31,17 @@ export default class Header extends Component {
                   {`Olá, ${userData.name}`}
                 </p>
               </div>
-              <Links />
+              <div className="links">
+                <Link to="/search">
+                  <p data-testid="link-to-search">Buscar</p>
+                </Link>
+                <Link to="/favorites">
+                  <p data-testid="link-to-favorites">Favoritas</p>
+                </Link>
+                <Link to="/profile">
+                  <p data-testid="link-to-profile">Perfil</p>
+                </Link>
+              </div>
             </>
           )}
       </header>
