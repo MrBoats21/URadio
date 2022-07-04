@@ -6,9 +6,6 @@ export default class Links extends Component {
     return (
       <div id="header">
         <div>
-          <h1>TRYBETUNES</h1>
-        </div>
-        <div>
           <Link to="/search">
             <p data-testid="link-to-search">Buscar</p>
           </Link>
