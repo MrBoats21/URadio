@@ -28,29 +28,33 @@ class Login extends Component {
       done,
     } = this.state;
 
+    if (done) {
+      return <Redirect to="/search" />;
+    }
+
     return (
       <div data-testid="page-login">
-        <form id="loginForm">
-          <input
-            type="text"
-            data-testid="login-name-input"
-            value={ name }
-            onChange={ (event) => this.setState({
-              name: event.target.value,
-            }) }
-          />
+        { loading ? <Loading /> : (
+          <form id="loginForm">
+            <input
+              type="text"
+              data-testid="login-name-input"
+              value={ name }
+              onChange={ (event) => this.setState({
+                name: event.target.value,
+              }) }
+            />
 
-          <button
-            type="submit"
-            data-testid="login-submit-button"
-            onClick={ this.handleLogin }
-            disabled={ name.length < minLen }
-          >
-            Login
-          </button>
-        </form>
-        { loading && <Loading /> }
-        { done && <Redirect to="/search" /> }
+            <button
+              type="submit"
+              data-testid="login-submit-button"
+              onClick={ this.handleLogin }
+              disabled={ name.length < minLen }
+            >
+              Login
+            </button>
+          </form>
+        )}
       </div>
 
     );

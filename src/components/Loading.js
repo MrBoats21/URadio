@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Loading extends Component {
+export default class Loading extends Component {
   render() {
     return (
       <div className="loading">
@@ -9,4 +9,3 @@ class Loading extends Component {
     );
   }
 }
-export default Loading;
