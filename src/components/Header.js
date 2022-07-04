@@ -23,9 +23,11 @@ export default class Header extends Component {
       <header data-testid="header-component">
         { !userData ? <Loading />
           : (
-            <h2 data-testid="header-user-name">
-              {`Olá, ${userData.name}`}
-            </h2>
+            <div id="greetings">
+              <h2 data-testid="header-user-name">
+                {`Olá, ${userData.name}`}
+              </h2>
+            </div>
           )}
       </header>
     );
