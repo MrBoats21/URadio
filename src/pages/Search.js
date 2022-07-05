@@ -48,7 +48,7 @@ export default class Search extends Component {
       <div data-testid="page-search">
         <Header />
         <div className="search-area">
-          <form>
+          <form className="form">
             <input
               type="text"
               placeholder="Artista/Álbum"

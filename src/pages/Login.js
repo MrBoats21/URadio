@@ -34,11 +34,13 @@ class Login extends Component {
 
     return (
       <div data-testid="page-login">
+        <h1 className="title">TrybeTunes</h1>
         { loading ? <Loading /> : (
-          <form id="loginForm">
+          <form className="form">
             <input
               type="text"
               data-testid="login-name-input"
+              placeholder="Digite seu nome"
               value={ name }
               onChange={ (event) => this.setState({
                 name: event.target.value,
