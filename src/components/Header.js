@@ -25,9 +25,9 @@ export default class Header extends Component {
         { !userData ? <Loading />
           : (
             <>
-              <div id="greetings">
+              <div className="greetings">
                 <h1>TrybeTunes</h1>
-                <p data-testid="header-user-name">
+                <p data-testid="header-user-name" className="user">
                   {`Olá, ${userData.name}`}
                 </p>
               </div>
