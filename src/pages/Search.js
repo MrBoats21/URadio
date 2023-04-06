@@ -29,9 +29,7 @@ export default class Search extends Component {
     e.preventDefault();
     const { info } = this.state;
     this.setState({ loading: true });
-    this.setState({
-      albumResults: await searchAlbumsAPI(info),
-      result: true });
+    this.setState({ albumResults: await searchAlbumsAPI(info), result: true });
     this.setState({ loading: false, search: info });
     this.setState({ info: '', showAlbuns: true });
   }
