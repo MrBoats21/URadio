@@ -1,13 +1,31 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+<h1>TFC</h1>
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+Projeto ainda em desenvolvimento! Algumas funcionalidades podem não estar funcionando
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Esse projeto simula o funcionamento de uma aplicação que auxilia pessoas apaixonadas por futebol à acompanhar os jogos do momento e de seus times favoritos.
+
+Instalação:  
+
+- Faça o clone do projeto usando o comando `git clone git@github.com:MrBoats21/project-trybe-futebol-clube.git` no terminal.
+
+- Abra um terminal nas pastas `app`, `app/backend` e `app/frontend` ou navegue até elas e use o comando `npm i
+
+- Utilize o comando `docker-compose up -d` na pasta `app`
+
+- No se navegador, navegue até `localhost:3000` para visualizar o projeto
+
+Login:
+
+1 - Administrador:
+email: `admin@admin.com`
+senha: `secret_admin`
+
+2 - Usuário: 
+email `user@user.com` 
+senha: `secret_user` 
+ 
+Funcionalidades:
+
+1 - Faça login como admin para acessar a aplicação como administrador para poder criar, finalizar e alterar a pontuação de jogos, além de visualizar o leaderboard e todas as partidas que já foram criadas.
+
+2 - Faça login como usuário padrão para visualizar o learderboard e as partidas que estão em andamento ou que já foram finalizadas  
