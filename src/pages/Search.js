@@ -72,7 +72,7 @@ export default class Search extends Component {
           </form>
         </div>
         { result && (
-          <h2>
+          <h2 className="result-txt">
             {`Resultado de: ${search}`}
           </h2>
         ) }
