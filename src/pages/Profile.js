@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { getUser } from '../services/userAPI';
+import '../style/pages/profile.css';
 
 class Profile extends React.Component {
   constructor() {
@@ -41,13 +42,22 @@ class Profile extends React.Component {
     return (
       loading ? null
         : (
-          <div>
+          <div className="user-info">
             <Header />
-            <Link to="/profile/edit">Editar perfil</Link>
-            <h1>{ nome }</h1>
-            <h1>{ email }</h1>
-            <h1>{ descricao }</h1>
-            <img alt={ imagem } src={ imagem } />
+            <Link to="/profile/edit" className="edit-btn">Editar perfil</Link>
+            <div className="full-profile">
+              <img alt={ imagem } src={ imagem } className="user-img" />
+              <div className="info-card">
+                <h1 className="user-name">{ nome }</h1>
+                <h2 className="user-email">{ email }</h2>
+                <p className="bio">
+                  Descrição:
+                  <br />
+                  <br />
+                  { descricao }
+                </p>
+              </div>
+            </div>
           </div>
         )
     );

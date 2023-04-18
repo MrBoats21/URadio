@@ -11,7 +11,8 @@ code {
 
 .loading {
   align-items: center;
-  background-color: rgba(227, 227, 227);
+  background-color: rgb(32, 32, 32);
+  color: white;
   display: flex;
   height: 100%;
   justify-content: center;

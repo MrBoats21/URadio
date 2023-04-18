@@ -1,0 +1,47 @@
+.edit-btn {
+  background-color: rgb(177, 45, 45);
+  border-radius: 25px 8px;
+  color: white;
+  float: right;
+  font-size: 1.8rem;
+  margin-right: 20px;
+  margin-top: 20px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.edit-btn:hover {
+  border-radius: 8px 25px;
+}
+
+.user-img {
+  border-radius: 50%;
+  height: 150px;
+  margin: 20px;
+  width: 150px;
+}
+
+.full-profile {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.info-card {
+  margin-left: 20px;
+}
+
+.user-name {
+  margin-bottom: 10px;
+}
+
+.user-email {
+  margin-bottom: 10px;
+}
+
+.bio {
+  text-align: justify;
+  width: 600px;
+}

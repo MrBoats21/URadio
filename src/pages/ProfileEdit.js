@@ -2,6 +2,7 @@ import { func, shape } from 'prop-types';
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import { getUser, updateUser } from '../services/userAPI';
+import '../style/pages/profileEdit.css';
 
 class ProfileEdit extends Component {
   constructor() {
@@ -12,7 +13,6 @@ class ProfileEdit extends Component {
       userDescription: '',
       userImage: '',
       loadingdisplay: true,
-      // buttonDisabled: true,
     };
   }
 
@@ -67,8 +67,9 @@ class ProfileEdit extends Component {
     const { userName, userEmail, userDescription, userImage,
       loadingdisplay } = this.state;
     const editForm = (
-      <form>
+      <form className="edit-form">
         <input
+          className="edit-name"
           placeholder="Nome"
           type="text"
           value={ userName }
@@ -76,6 +77,7 @@ class ProfileEdit extends Component {
           name="userName"
         />
         <input
+          className="edit-email"
           placeholder="Email"
           type="text"
           value={ userEmail }
@@ -83,6 +85,7 @@ class ProfileEdit extends Component {
           name="userEmail"
         />
         <input
+          className="edit-description"
           placeholder="Descrição"
           type="textarea"
           value={ userDescription }
@@ -90,6 +93,7 @@ class ProfileEdit extends Component {
           name="userDescription"
         />
         <input
+          className="edit-img"
           placeholder="Url da imagem"
           type="text"
           value={ userImage }
@@ -97,6 +101,7 @@ class ProfileEdit extends Component {
           name="userImage"
         />
         <button
+          className="save-btn"
           type="button"
           disabled={ this.validateButton() }
           onClick={ this.buttonClickHandler }

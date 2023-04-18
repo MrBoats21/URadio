@@ -1,0 +1,17 @@
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 50%;
+}
+
+.edit-form input {
+  padding: 10px;
+}
+
+.save-btn {
+  font-size: 1.5rem;
+  padding: 10px;
+}
