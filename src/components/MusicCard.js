@@ -1,14 +1,12 @@
 import { arrayOf, func, number, shape, string } from 'prop-types';
 import React, { Component } from 'react';
 import { addSong, removeSong } from '../services/favoriteSongsAPI';
-import Loading from './Loading';
 
 class MusicCard extends Component {
   constructor() {
     super();
     this.state = {
       checkedValidation: false,
-      loadingDisplay: false,
     };
   }
 
@@ -22,9 +20,6 @@ class MusicCard extends Component {
   }
 
   favoriteChangeHandler = async () => {
-    this.setState({
-      loadingDisplay: true,
-    });
     const { music } = this.props;
     const { checkedValidation } = this.state;
     // console.log(music);
@@ -32,13 +27,11 @@ class MusicCard extends Component {
       await removeSong(music);
       this.setState({
         checkedValidation: false,
-        loadingDisplay: false,
       });
     } else {
       await addSong(music);
       this.setState({
         checkedValidation: true,
-        loadingDisplay: false,
       });
     }
     const { updateList } = this.props;
@@ -47,7 +40,7 @@ class MusicCard extends Component {
 
   render() {
     const { name, audio, trackId } = this.props;
-    const { loadingDisplay, checkedValidation } = this.state;
+    const { checkedValidation } = this.state;
     return (
       <div>
         <h3>{ name }</h3>
