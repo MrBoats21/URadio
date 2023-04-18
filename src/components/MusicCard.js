@@ -1,6 +1,7 @@
 import { arrayOf, func, number, shape, string } from 'prop-types';
 import React, { Component } from 'react';
 import { addSong, removeSong } from '../services/favoriteSongsAPI';
+import '../style/components/musicCard.css';
 
 class MusicCard extends Component {
   constructor() {
@@ -22,7 +23,6 @@ class MusicCard extends Component {
   favoriteChangeHandler = async () => {
     const { music } = this.props;
     const { checkedValidation } = this.state;
-    // console.log(music);
     if (checkedValidation) {
       await removeSong(music);
       this.setState({
@@ -42,8 +42,8 @@ class MusicCard extends Component {
     const { name, audio, trackId } = this.props;
     const { checkedValidation } = this.state;
     return (
-      <div>
-        <h3>{ name }</h3>
+      <div className="music">
+        <h3 className="music-name">{ name }</h3>
         <audio src={ audio } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento

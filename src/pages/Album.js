@@ -1,7 +1,6 @@
 import { shape } from 'prop-types';
 import React, { Component } from 'react';
 import Header from '../components/Header';
-import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import getMusics from '../services/musicsAPI';
@@ -29,17 +28,12 @@ class Album extends Component {
   }
 
   getTracks = async () => {
-    // this.setState({
-    //   loadingDisplay: true,
-    // });
     const { match: { params: { id } } } = this.props;
     const tracks = await getMusics(id);
-    // console.log(tracks);
     this.setState({
       tracksList: tracks.slice(1),
       albumName: tracks[0].collectionName,
       artistName: tracks[0].artistName,
-      // loadingDisplay: false,
     });
   }
 
@@ -52,14 +46,14 @@ class Album extends Component {
       favoriteSongs } = this.state;
 
     return (
-      <div>
+      <div className="full-page">
         <Header />
         { loadingDisplay
-          ? <Loading />
+          ? null
           : (
-            <div>
-              <p>{ artistName }</p>
-              <h2>{ albumName }</h2>
+            <div className="album-body">
+              <h3 className="album-info">{ artistName }</h3>
+              <h1 className="album-info">{ albumName }</h1>
               { tracksList.map((song) => (
                 <MusicCard
                   key={ song.trackId }

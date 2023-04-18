@@ -20,10 +20,6 @@ class Favorites extends Component {
     });
   }
 
-  // componentDidUpdate() {
-  //   this.updateList();
-  // }
-
   updateList = async () => {
     this.setState({
       loadingDisplay: true,
@@ -50,7 +46,7 @@ class Favorites extends Component {
     ));
 
     return (
-      <div>
+      <div className="favorite-page">
         <Header />
         { loadingDisplay ? null : musicList }
       </div>

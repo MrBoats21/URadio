@@ -4,6 +4,7 @@ import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import '../style/pages/login.css';
+import '../style/pages/search.css';
 
 export default class Search extends Component {
   constructor(props) {
@@ -71,9 +72,9 @@ export default class Search extends Component {
           </form>
         </div>
         { result && (
-          <h3>
-            {`Resultado de álbuns de: ${search}`}
-          </h3>
+          <h2>
+            {`Resultado de: ${search}`}
+          </h2>
         ) }
         <div className="album-list">
           {
@@ -85,15 +86,20 @@ export default class Search extends Component {
                     <Link
                       to={ `/album/${collectionId}` }
                     >
-                      <img src={ artworkUrl100 } alt={ collectionName } />
+                      <img
+                        src={ artworkUrl100 }
+                        alt={ collectionName }
+                        className="album-cover"
+                      />
                     </Link>
-                    <h4>
-                      {`Álbum: ${collectionName}`}
-                    </h4>
-                    <h5>
-                      {`Artista: ${artistName}`}
-                    </h5>
-
+                    <div className="info">
+                      <h2 className="album-name">
+                        {`${collectionName}`}
+                      </h2>
+                      <h3 className="artist-name">
+                        {`${artistName}`}
+                      </h3>
+                    </div>
                   </div>))
 
           }
