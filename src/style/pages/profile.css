@@ -19,6 +19,7 @@
   height: 150px;
   margin: 20px;
   width: 150px;
+  border: 2px solid white;
 }
 
 .full-profile {
