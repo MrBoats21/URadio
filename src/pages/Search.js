@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
+import '../style/pages/login.css';
 
 export default class Search extends Component {
   constructor(props) {
@@ -43,14 +44,14 @@ export default class Search extends Component {
       showAlbuns } = this.state;
     if (loading) return <Loading />;
     return (
-      <div data-testid="page-search">
+      <div>
         <Header />
-        <div className="search-area">
+        <div>
           <form className="form">
             <input
               type="text"
-              placeholder="Artista/Álbum"
-              data-testid="search-artist-input"
+              className="input1 it"
+              placeholder="Artista / Álbum"
               value={ info }
               onChange={ (event) => {
                 this.setState({
@@ -58,12 +59,15 @@ export default class Search extends Component {
                 });
               } }
             />
-            <input
+            <button
+              className="submit it"
               type="submit"
-              data-testid="search-artist-button"
               disabled={ info.length < 2 }
               onClick={ this.searchAlbum }
-            />
+
+            >
+              Encontrar
+            </button>
           </form>
         </div>
         { result && (
@@ -80,7 +84,6 @@ export default class Search extends Component {
                   <div key={ collectionId } className="album-list-item">
                     <Link
                       to={ `/album/${collectionId}` }
-                      data-testid={ `link-to-album-${collectionId}` }
                     >
                       <img src={ artworkUrl100 } alt={ collectionName } />
                     </Link>

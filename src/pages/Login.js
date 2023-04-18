@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { createUser } from '../services/userAPI';
+import '../style/pages/login.css';
 
 class Login extends Component {
   state = {
@@ -33,13 +34,21 @@ class Login extends Component {
     }
 
     return (
-      <div data-testid="page-login">
-        <h1 className="title">TrybeTunes</h1>
+      <div className="login-body">
+        <div className="title">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3844/3844724.png"
+            className="icon"
+            alt="uradio-icon"
+          />
+          <h1>URadio</h1>
+          <h3 className="greeting">Seja bem vindo!</h3>
+        </div>
         { loading ? <Loading /> : (
           <form className="form">
             <input
               type="text"
-              data-testid="login-name-input"
+              className="input1 it"
               placeholder="Digite seu nome"
               value={ name }
               onChange={ (event) => this.setState({
@@ -48,8 +57,8 @@ class Login extends Component {
             />
 
             <button
+              className="submit it"
               type="submit"
-              data-testid="login-submit-button"
               onClick={ this.handleLogin }
               disabled={ name.length < minLen }
             >

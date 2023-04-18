@@ -13,10 +13,6 @@ body {
   padding-left: 20px;
 }
 
-.form {
-  margin: 50px;
-}
-
 .music {
   align-items: center;
   background-color: gray;
@@ -54,6 +50,6 @@ body {
 .user {
   background-color: gray;
   border-radius: 50px;
-  margin-left: 100px;
+  margin-left: 50px;
   padding: 12px;
 }

@@ -57,9 +57,9 @@ class Album extends Component {
         { loadingDisplay
           ? <Loading />
           : (
-            <div data-testid="page-album">
-              <p data-testid="artist-name">{ artistName }</p>
-              <h2 data-testid="album-name">{ albumName }</h2>
+            <div>
+              <p>{ artistName }</p>
+              <h2>{ albumName }</h2>
               { tracksList.map((song) => (
                 <MusicCard
                   key={ song.trackId }

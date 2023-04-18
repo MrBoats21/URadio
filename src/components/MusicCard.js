@@ -44,7 +44,7 @@ class MusicCard extends Component {
     return (
       <div>
         <h3>{ name }</h3>
-        <audio data-testid="audio-component" src={ audio } controls>
+        <audio src={ audio } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento
           {' '}

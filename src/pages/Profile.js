@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { getUser } from '../services/userAPI';
-import Loading from '../components/Loading';
 
 class Profile extends React.Component {
   constructor() {
@@ -40,15 +39,15 @@ class Profile extends React.Component {
   render() {
     const { loading, nome, email, descricao, imagem } = this.state;
     return (
-      loading ? <Loading />
+      loading ? null
         : (
-          <div data-testid="page-profile">
+          <div>
             <Header />
             <Link to="/profile/edit">Editar perfil</Link>
             <h1>{ nome }</h1>
             <h1>{ email }</h1>
             <h1>{ descricao }</h1>
-            <img alt={ imagem } src={ imagem } data-testid="profile-image" />
+            <img alt={ imagem } src={ imagem } />
           </div>
         )
     );

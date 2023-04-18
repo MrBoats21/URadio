@@ -1,7 +1,6 @@
 import { func, shape } from 'prop-types';
 import React, { Component } from 'react';
 import Header from '../components/Header';
-import Loading from '../components/Loading';
 import { getUser, updateUser } from '../services/userAPI';
 
 class ProfileEdit extends Component {
@@ -72,7 +71,6 @@ class ProfileEdit extends Component {
         <input
           placeholder="Nome"
           type="text"
-          data-testid="edit-input-name"
           value={ userName }
           onChange={ this.onChangeHandler }
           name="userName"
@@ -80,7 +78,6 @@ class ProfileEdit extends Component {
         <input
           placeholder="Email"
           type="text"
-          data-testid="edit-input-email"
           value={ userEmail }
           onChange={ this.onChangeHandler }
           name="userEmail"
@@ -88,7 +85,6 @@ class ProfileEdit extends Component {
         <input
           placeholder="Descrição"
           type="textarea"
-          data-testid="edit-input-description"
           value={ userDescription }
           onChange={ this.onChangeHandler }
           name="userDescription"
@@ -96,14 +92,12 @@ class ProfileEdit extends Component {
         <input
           placeholder="Url da imagem"
           type="text"
-          data-testid="edit-input-image"
           value={ userImage }
           onChange={ this.onChangeHandler }
           name="userImage"
         />
         <button
           type="button"
-          data-testid="edit-button-save"
           disabled={ this.validateButton() }
           onClick={ this.buttonClickHandler }
         >
@@ -112,9 +106,9 @@ class ProfileEdit extends Component {
       </form>
     );
     return (
-      <div data-testid="page-profile-edit">
+      <div>
         <Header />
-        { loadingdisplay ? <Loading /> : editForm }
+        { loadingdisplay ? null : editForm }
       </div>
     );
   }

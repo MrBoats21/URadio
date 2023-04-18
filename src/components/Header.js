@@ -21,25 +21,30 @@ export default class Header extends Component {
     } = this.state;
 
     return (
-      <header data-testid="header-component">
+      <header>
         { !userData ? <Loading />
           : (
             <>
               <div className="greetings">
-                <h1>TrybeTunes</h1>
-                <p data-testid="header-user-name" className="user">
-                  {`Olá, ${userData.name}`}
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3844/3844724.png"
+                  className="icon"
+                  alt="uradio-icon"
+                />
+                <h1>URadio</h1>
+                <p className="user">
+                  {`Olá, ${userData.name}!`}
                 </p>
               </div>
               <div className="links">
                 <Link to="/search">
-                  <p data-testid="link-to-search">Buscar</p>
+                  <p>Buscar</p>
                 </Link>
                 <Link to="/favorites">
-                  <p data-testid="link-to-favorites">Favoritas</p>
+                  <p>Favoritas</p>
                 </Link>
                 <Link to="/profile">
-                  <p data-testid="link-to-profile">Perfil</p>
+                  <p>Perfil</p>
                 </Link>
               </div>
             </>
