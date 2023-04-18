@@ -7,7 +7,6 @@
 .music {
   align-items: center;
   background-color: rgb(91, 91, 91);
-  border: 2px 20px solid rgb(75, 74, 74);
   border-radius: 0% 50px 50px 0%;
   display: flex;
   justify-content: space-between;
